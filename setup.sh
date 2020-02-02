@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # Make sure we have pulled in and updated any submodules
 git submodule init
@@ -31,18 +31,15 @@ echo "Stowing apps for user ${whoami}"
 
 # Install apps available to local users and root
 for app in ${base[@]}; do
-	stowit "${HOME} $app
+	stowit "${HOME}" $app
 done
 
 # Install apps for the user space folders
 for app in ${useronly[@]}; do
-	if [[! "${whoami}" = *"root"*]]; then
+	if [ "${whoami}" != *"root"* ]; then
 		stowit "${HOME}" $app
 	fi
 done
 
 echo ""
 echo "### ALL DONE ###"
-
-
-#
