@@ -1,0 +1,7 @@
+The GNU Stow version of my dotfiles repo.
+
+Use the files in the __setup directory to assist with setting up a new box/user. 
+
+Either use the setup.sh script to install all of the dotfiles, or run the stow command on its own: 
+	stow -v -R -t ~ <directory>
+	stow -v -R -t ~ git
